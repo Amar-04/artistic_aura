@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-charcoal: var(--charcoal);
+  --color-ink: var(--ink);
+
+  --font-display: 'Cinzel', serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand — monochrome (black / white / grey) */
+  --ink: oklch(0.08 0 0);                    /* deep black */
+  --charcoal: oklch(0.18 0 0);               /* matte charcoal */
+  --silver: oklch(0.78 0 0);                 /* premium silver/grey */
+  --pearl: oklch(0.97 0 0);                  /* near-white */
+
+  /* Accent tokens map to silver/white instead of gold (kept names for compatibility) */
+  --gold: oklch(0.88 0 0);                   /* bright silver/white accent */
+  --gold-bright: oklch(0.97 0 0);            /* pure white highlight */
+
+  --background: var(--ink);
+  --foreground: oklch(0.97 0 0);
+
+  --card: oklch(0.14 0 0 / 0.65);
+  --card-foreground: oklch(0.97 0 0);
+
+  --popover: var(--charcoal);
+  --popover-foreground: oklch(0.97 0 0);
+
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.08 0 0);
+
+  --secondary: var(--charcoal);
+  --secondary-foreground: oklch(0.97 0 0);
+
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+
+  --accent: oklch(0.88 0 0);
+  --accent-foreground: oklch(0.08 0 0);
+
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.97 0 0);
+
+  --border: oklch(0.55 0 0 / 0.25);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.88 0 0);
+
+  --gradient-gold: linear-gradient(135deg, oklch(1 0 0), oklch(0.65 0 0));
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.22 0 0) 0%, oklch(0.08 0 0) 60%, oklch(0.04 0 0) 100%);
+  --shadow-gold: 0 10px 40px -10px oklch(1 0 0 / 0.25);
+  --shadow-gold-lg: 0 20px 60px -10px oklch(1 0 0 / 0.35);
+}
+
+.dark {
+  /* same — site is dark-first */
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); letter-spacing: 0.04em; }
+  .font-serif { font-family: var(--font-serif); }
+  .font-body { font-family: var(--font-body); }
+
+  .text-gold { color: var(--gold); }
+  .bg-gold { background-color: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-hero { background: var(--gradient-hero); }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: oklch(0.14 0 0 / 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 0.1);
+  }
+
+  .glass-gold-top {
+    background: oklch(0.14 0 0 / 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 0.12);
+    border-top: 2px solid oklch(1 0 0 / 0.85);
+  }
+
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-gold-lg { box-shadow: var(--shadow-gold-lg); }
+
+  .text-3d-gold {
+    color: var(--gold-bright);
+    text-shadow:
+      0 1px 0 oklch(0.7 0 0),
+      0 2px 0 oklch(0.6 0 0),
+      0 3px 0 oklch(0.5 0 0),
+      0 4px 0 oklch(0.4 0 0),
+      0 5px 0 oklch(0.3 0 0),
+      0 6px 1px oklch(0 0 0 / 0.2),
+      0 0 5px oklch(0 0 0 / 0.15),
+      0 1px 3px oklch(0 0 0 / 0.3),
+      0 3px 5px oklch(0 0 0 / 0.25),
+      0 5px 10px oklch(0 0 0 / 0.3),
+      0 10px 30px oklch(1 0 0 / 0.2);
+  }
+
+  @keyframes float-3d {
+    0%, 100% { transform: translateY(0) rotateY(0deg) rotateX(0deg); }
+    50% { transform: translateY(-12px) rotateY(8deg) rotateX(-4deg); }
+  }
+  .animate-float-3d {
+    animation: float-3d 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes sparkle-drift {
+    0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-10vh) translateX(40px); opacity: 0; }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .animate-pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: #25D366;
+    animation: pulse-ring 2s ease-out infinite;
+    z-index: -1;
+  }
+
+  @keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-scroll-x { animation: scroll-x 40s linear infinite; }
+
+  @keyframes bounce-down {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(8px); opacity: 1; }
+  }
+  .animate-bounce-down { animation: bounce-down 2s ease-in-out infinite; }
+}
