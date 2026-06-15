@@ -223,80 +223,80 @@ export function Hero() {
   );
 }
 
-function ArtistSilhouette() {
-  return (
-    <svg viewBox="0 0 400 400" className="w-full h-full" aria-hidden="true">
-      <defs>
-        <linearGradient id="goldg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#E5C76B" />
-          <stop offset="100%" stopColor="#7A6020" />
-        </linearGradient>
-        <radialGradient id="bg" cx="50%" cy="50%">
-          <stop offset="0%" stopColor="#1A1A1A" />
-          <stop offset="100%" stopColor="#0A0A0A" />
-        </radialGradient>
-      </defs>
-      <circle
-        cx="200"
-        cy="200"
-        r="180"
-        fill="url(#bg)"
-        stroke="url(#goldg)"
-        strokeWidth="1"
-      />
-      {/* decorative rings */}
-      <circle
-        cx="200"
-        cy="200"
-        r="160"
-        fill="none"
-        stroke="url(#goldg)"
-        strokeWidth="0.5"
-        opacity="0.3"
-      />
-      <circle
-        cx="200"
-        cy="200"
-        r="140"
-        fill="none"
-        stroke="url(#goldg)"
-        strokeWidth="0.5"
-        opacity="0.2"
-      />
-      {/* artist silhouette */}
-      <g fill="url(#goldg)">
-        {/* head */}
-        <circle cx="200" cy="130" r="28" />
-        {/* shoulders/torso */}
-        <path d="M150 175 Q200 160 250 175 L260 260 Q200 250 140 260 Z" />
-        {/* arm holding tattoo machine */}
-        <path d="M250 200 L300 230 L295 245 L245 215 Z" />
-        {/* tattoo machine */}
-        <rect x="295" y="220" width="30" height="14" rx="3" />
-        <line
-          x1="325"
-          y1="227"
-          x2="345"
-          y2="227"
-          stroke="url(#goldg)"
-          strokeWidth="2"
-        />
-      </g>
-      {/* mandala accent */}
-      <g stroke="url(#goldg)" strokeWidth="0.8" fill="none" opacity="0.6">
-        <circle cx="120" cy="290" r="30" />
-        <circle cx="120" cy="290" r="20" />
-        <circle cx="120" cy="290" r="10" />
-        {[0, 45, 90, 135].map((a) => (
-          <line
-            key={a}
-            x1="120"
-            y1="290"
-            x2={120 + 30 * Math.cos((a * Math.PI) / 180)}
-            y2={290 + 30 * Math.sin((a * Math.PI) / 180)}
-          />
-        ))}
-      </g>
-    </svg>
-  );
-}
+// function ArtistSilhouette() {
+//   return (
+//     <svg viewBox="0 0 400 400" className="w-full h-full" aria-hidden="true">
+//       <defs>
+//         <linearGradient id="goldg" x1="0" y1="0" x2="1" y2="1">
+//           <stop offset="0%" stopColor="#E5C76B" />
+//           <stop offset="100%" stopColor="#7A6020" />
+//         </linearGradient>
+//         <radialGradient id="bg" cx="50%" cy="50%">
+//           <stop offset="0%" stopColor="#1A1A1A" />
+//           <stop offset="100%" stopColor="#0A0A0A" />
+//         </radialGradient>
+//       </defs>
+//       <circle
+//         cx="200"
+//         cy="200"
+//         r="180"
+//         fill="url(#bg)"
+//         stroke="url(#goldg)"
+//         strokeWidth="1"
+//       />
+//       {/* decorative rings */}
+//       <circle
+//         cx="200"
+//         cy="200"
+//         r="160"
+//         fill="none"
+//         stroke="url(#goldg)"
+//         strokeWidth="0.5"
+//         opacity="0.3"
+//       />
+//       <circle
+//         cx="200"
+//         cy="200"
+//         r="140"
+//         fill="none"
+//         stroke="url(#goldg)"
+//         strokeWidth="0.5"
+//         opacity="0.2"
+//       />
+//       {/* artist silhouette */}
+//       <g fill="url(#goldg)">
+//         {/* head */}
+//         <circle cx="200" cy="130" r="28" />
+//         {/* shoulders/torso */}
+//         <path d="M150 175 Q200 160 250 175 L260 260 Q200 250 140 260 Z" />
+//         {/* arm holding tattoo machine */}
+//         <path d="M250 200 L300 230 L295 245 L245 215 Z" />
+//         {/* tattoo machine */}
+//         <rect x="295" y="220" width="30" height="14" rx="3" />
+//         <line
+//           x1="325"
+//           y1="227"
+//           x2="345"
+//           y2="227"
+//           stroke="url(#goldg)"
+//           strokeWidth="2"
+//         />
+//       </g>
+//       {/* mandala accent */}
+//       <g stroke="url(#goldg)" strokeWidth="0.8" fill="none" opacity="0.6">
+//         <circle cx="120" cy="290" r="30" />
+//         <circle cx="120" cy="290" r="20" />
+//         <circle cx="120" cy="290" r="10" />
+//         {[0, 45, 90, 135].map((a) => (
+//           <line
+//             key={a}
+//             x1="120"
+//             y1="290"
+//             x2={120 + 30 * Math.cos((a * Math.PI) / 180)}
+//             y2={290 + 30 * Math.sin((a * Math.PI) / 180)}
+//           />
+//         ))}
+//       </g>
+//     </svg>
+//   );
+// }
