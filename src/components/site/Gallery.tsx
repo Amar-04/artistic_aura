@@ -78,14 +78,12 @@ export function Gallery() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <p className="text-gold tracking-[0.4em] text-xs uppercase mb-4">
-            Our Work
-          </p>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-gradient-gold mb-4">
-            Signature Pieces
+          <h2 className="font-display text-3xl text-gradient-gold mb-4">
+            Our Work Speaks for Itself
           </h2>
-          <p className="text-foreground/70 font-serif text-lg">
-            A curated showcase of our latest custom tattoos
+          <p className="text-foreground/70 font-serif text-xl">
+            Take a look at what we've created for our clients and imagine what
+            we could create for you.
           </p>
         </motion.div>
 
